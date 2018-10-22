@@ -23,7 +23,7 @@ public class CarLotApp {
 		boolean done = false;
 		while (!done) {
 			System.out.println("Select an option: (list, select, add, quit)");
-			String option = sc.nextLine();
+			String option = sc.next();
 			switch (option) {
 			case "list":
 				doListOption();
@@ -63,32 +63,25 @@ public class CarLotApp {
 		if (buyCar.equals("yes")) {
 			list.remove(select - 1);
 		}
-
+		System.out.println();
 	}
 
 	private static void doAddOption() {
 		System.out.println("Is the car new or used?");
 		String typeOfCar = sc.next();
+		System.out.println("Enter Make: ");
+		String make = sc.next();
+		System.out.println("Enter Model: ");
+		String model = sc.next();
+		System.out.println("Enter Year: ");
+		int year = sc.nextInt();
+		System.out.println("Enter Price: ");
+		double price = sc.nextDouble();
 		if (typeOfCar.equals("new")) {
-			System.out.println("Enter Make: ");
-			String make = sc.next();
-			System.out.println("Enter Model: ");
-			String model = sc.next();
-			System.out.println("Enter Year: ");
-			int year = sc.nextInt();
-			System.out.println("Enter Price: ");
-			double price = sc.nextDouble();
 
 			list.add(new Car(make, model, year, price));
 		} else {
-			System.out.println("Enter Make: ");
-			String make = sc.next();
-			System.out.println("Enter Model: ");
-			String model = sc.next();
-			System.out.println("Enter Year: ");
-			int year = sc.nextInt();
-			System.out.println("Enter Price: ");
-			double price = sc.nextDouble();
+
 			System.out.println("Enter Mileage: ");
 			double mileage = sc.nextDouble();
 
